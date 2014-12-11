@@ -21,7 +21,7 @@ Managing Localizable.strings files sucks. Translating them with a team sucks. Th
 {
 
     "google": {
-        "spreadsheetId": "spreadsheet id", #
+        "spreadsheetId": "spreadsheet id",
         "worksheetName": "Translation",
         "username": "example@gmail.com",
         "password": "hihihi"
