@@ -18,5 +18,6 @@
     "email": "ich@philippwaldhauer.de",
     "url": "http://knuspermagier.de"
   },
+  "repository": "https://github.com/pwaldhauer/syncstrings.git",
   "license": "MIT"
 }
