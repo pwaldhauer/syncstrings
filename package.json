@@ -1,0 +1,22 @@
+{
+  "name": "syncstrings",
+  "version": "1.0.0",
+  "description": "Sync your Localizable.strings with Google Spreadsheets",
+  "main": "app.js",
+  "bin": {
+    "syncstrings": "app.js"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "edit-google-spreadsheet": "^0.2.13",
+    "i18n-strings-files": "^0.0.6",
+    "optimist": "^0.6.1",
+    "underscore": "^1.7.0"
+  },
+  "author": {
+    "name": "Philipp Waldhauer",
+    "email": "ich@philippwaldhauer.de",
+    "url": "http://knuspermagier.de"
+  },
+  "license": "MIT"
+}

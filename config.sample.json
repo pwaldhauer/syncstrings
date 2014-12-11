@@ -1,0 +1,19 @@
+{
+    "google": {
+        "spreadsheetId": "spreadsheet id",
+        "worksheetName": "Translation",
+        "username": "example@gmail.com",
+        "password": "hihihi"
+    },
+
+    "translation": {
+        "basePath": "path/to/project/directory",
+        "startRow": "2",
+        "keyRow": "1",
+        "commentRow": "2",
+        "languages": {
+            "Base": "3"
+        }
+    }
+
+}
