@@ -21,18 +21,18 @@ Managing Localizable.strings files sucks. Translating them with a team sucks. Th
 {
 
     "google": {
-        "spreadsheetId": "spreadsheet id", # the ID of the spreadsheet. Look in your browsers address bar
-        "worksheetName": "Translation",    # the title of the worksheet to use
+        "spreadsheetId": "spreadsheet id", #
+        "worksheetName": "Translation",
         "username": "example@gmail.com",
         "password": "hihihi"
     },
 
     "translation": {
-        "basePath": "path/to/project/directory", # path to the directory that contains the "language".lproj files
-        "startRow": "2", # Importing will start at this row. 1-based. Start at 2 to leave room for a headline
-        "keyRow": "1", # Column to put the keys in (yeah, it should be called keyColumn)
-        "commentRow": "2", # Column to put the comments (currently not supported)
-        "languages": {  # Object containing "Name of language" => "number of column to put stuff in"
+        "basePath": "path/to/project/directory",
+        "startRow": "2",
+        "keyRow": "1",
+        "commentRow": "2",
+        "languages": {
             "Base": "3"
         }
     }
@@ -41,7 +41,17 @@ Managing Localizable.strings files sucks. Translating them with a team sucks. Th
 
 ```
 
+| `google.spreadsheetId` | the ID of the spreadsheet. Look in your browsers address bar|
+| `google.worksheetName` | the title of the worksheet to use|
+| `translation.basePath` |  path to the directory that contains the "language".lproj files|
+| `translation.startRow` |Importing will start at this row. 1-based. Start at 2 to leave room for a headline|
+| `translation.keyRow` | Column to put the keys in (yeah, it should be called keyColumn)|
+| `translation.commentRow` | Column to put the comments (currently not supported) |
+| `translation.languages` | Object containing "Name of language" => "number of column to put stuff in"|
+
 ## How should the spreadsheet look like?
+
+![Screenshot](https://s3-eu-west-1.amazonaws.com/knusperfiles/syncstrings.png)
 
 ## How should I update mit local strings file after adding new keys to my source?
 
