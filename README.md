@@ -1,6 +1,6 @@
 # syncstrings
 
-Managing Localizable.strings files sucks. Translating them with a team sucks. This tool syncs your local .strings files with a Google Spreadsheet to allow easy collaboration on your localization.
+Managing `Localizable.strings` files sucks. Translating them with a team sucks. This tool syncs your local `.strings` files with a Google Spreadsheet to allow easy collaboration on your localization.
 
 ## Usage
 
@@ -10,9 +10,9 @@ Managing Localizable.strings files sucks. Translating them with a team sucks. Th
 
 1. Load your configuration
 2. Connect to the configured spreadsheet and load all definded strings
-3. Load the local strings file and overwrite all strings with the corresponding strings from the spreadsheet
+3. Load the local `.strings` file and overwrite all strings with the corresponding strings from the spreadsheet
 4. Upload all new keys to the spreadsheet
-5. Save your local strings file
+5. Save your local `.strings` file
 
 ## How should the config look like?
 
@@ -55,12 +55,16 @@ Managing Localizable.strings files sucks. Translating them with a team sucks. Th
 
 ![Screenshot](https://s3-eu-west-1.amazonaws.com/knusperfiles/syncstrings.png)
 
-## How should I update mit local strings file after adding new keys to my source?
+## How should I update my local strings file after adding new keys to my source?
 
 This sucks. But fortunately there is a REALLY nice tool to do the job. Just buy [LocalizableStringsMerge](http://www.delitestudio.com/app/localizable-strings-merge/) and stay happy.
 
-(But you'll need to remove the /* NEW */ flags it creates prior to syncing the strings)
+(But you'll need to remove the `/* NEW */ flags it creates prior to syncing the strings)
 
 ## Known bugs
 
 This is a quickly developed script which works for me, but I think it could be useful for others. Theoretically it should support multiple languages, but this is currently untested.
+
+## Licence
+
+MIT
