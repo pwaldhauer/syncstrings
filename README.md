@@ -41,13 +41,15 @@ Managing Localizable.strings files sucks. Translating them with a team sucks. Th
 
 ```
 
-| `google.spreadsheetId` | the ID of the spreadsheet. Look in your browsers address bar|
-| `google.worksheetName` | the title of the worksheet to use|
-| `translation.basePath` |  path to the directory that contains the "language".lproj files|
-| `translation.startRow` |Importing will start at this row. 1-based. Start at 2 to leave room for a headline|
-| `translation.keyRow` | Column to put the keys in (yeah, it should be called keyColumn)|
+| Name       | Description                                                              |
+|------------|--------------------------------------------------------------------------|
+| `google.spreadsheetId` | the ID of the spreadsheet. Look in your browsers address bar |
+| `google.worksheetName` | the title of the worksheet to use |
+| `translation.basePath` |  path to the directory that contains the "language".lproj files |
+| `translation.startRow` | Importing will start at this row. 1-based. Start at 2 to leave room for a headline |
+| `translation.keyRow` | Column to put the keys in (yeah, it should be called keyColumn) |
 | `translation.commentRow` | Column to put the comments (currently not supported) |
-| `translation.languages` | Object containing "Name of language" => "number of column to put stuff in"|
+| `translation.languages` | Object containing "Name of language" => "number of column to put stuff in" |
 
 ## How should the spreadsheet look like?
 
