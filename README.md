@@ -2,6 +2,10 @@
 
 Managing `Localizable.strings` files sucks. Translating them with a team sucks. This tool syncs your local `.strings` files with a Google Spreadsheet to allow easy collaboration on your localization.
 
+## Installation
+
+`sudo npm install -g syncstrings`
+
 ## Usage
 
 `syncstrings -c [path to config file]`
