@@ -12,8 +12,12 @@
         "keyRow": "1",
         "commentRow": "2",
         "languages": {
-            "Base": "3"
+            "de": "3"
         }
-    }
+    },
+
+    "base": "de",
+
+    "adapter": "strings"
 
 }

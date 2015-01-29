@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var i18nStringsFiles = require('i18n-strings-files');
 var Spreadsheet = require('edit-google-spreadsheet');
 var async = require('async');
 var path = require('path');
@@ -10,13 +9,22 @@ var argv = require('optimist')
     .demand(['c'])
     .argv;
 
+var StringsFileAdapter = require('./adapter/strings');
+var JSONFileAdapter = require('./adapter/json');
+
 var config = require(path.resolve(argv.c));
+
+var adapter = new StringsFileAdapter(config);
+
+if(config.adapter == 'json') {
+    adapter = new JSONFileAdapter(config);
+}
 
 async.waterfall([
 
     function loadSpreadsheet(callback) {
         Spreadsheet.load({
-            debug: false,
+            debug: true,
             spreadsheetId: config.google.spreadsheetId,
             worksheetName: config.google.worksheetName,
             username: config.google.username,
@@ -57,9 +65,9 @@ async.waterfall([
 
         var queue = async.queue(function(item, callback) {
             var strings = languages[item];
-            var filename = path.join(config.translation.basePath, item + '.lproj', 'Localizable.strings');
+            var filename = path.join(config.translation.basePath, adapter.filenameForLanguage(item));
 
-            i18nStringsFiles.readFile(filename, 'UTF-16', function(err, data) {
+            adapter.read(filename, function(err, data) {
                 // search for strings that are not online
                 for (var i in data)  {
                     // web file has string ... update local copy else add it to sync queue
@@ -78,7 +86,7 @@ async.waterfall([
                 console.log('new strings to sync upwards:');
                 console.log(to_sync);
 
-                i18nStringsFiles.writeFile(filename, data, 'UTF-16', function(err, data) {
+                adapter.write(filename, data, function(err, data) {
                     callback(null);
                 });
 
@@ -94,7 +102,7 @@ async.waterfall([
     },
 
     function writeSpreadsheet(spreadsheet, languages, to_sync, callback) {
-        var row = Object.keys(languages['Base']).length + parseInt(config.translation.startRow);
+        var row = Object.keys(languages[config.base]).length + parseInt(config.translation.startRow);
         for (var i in to_sync) {
             var string = to_sync[i];
 
